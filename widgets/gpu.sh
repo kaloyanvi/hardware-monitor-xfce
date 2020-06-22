@@ -19,9 +19,6 @@ readonly GPU_FAN_SPEED="$(nvidia-smi -i 0 -q | grep "Fan Speed" | cut -c38-40)"
 # Panel
 if [[ $(file -b "${ICON}") =~ PNG|SVG ]]; then
   INFO="<img>${ICON}</img>"
-  if hash xfce4-taskmanager &> /dev/null; then
-    INFO+="<click>xfce4-taskmanager</click>"
-  fi
   INFO+="<txt>"
 else
   INFO="<txt>"
@@ -41,10 +38,11 @@ MORE_INFO+="└─ Fan Speed\t\t\t${GPU_FAN_SPEED}%\n\n"
 
 MORE_INFO+="┌ Drivers\n"
 MORE_INFO+="├─ NVIDIA\t\t\t${DRIVER_VERSION}\n"
-MORE_INFO+="└─ CUDA Version\t\t${CUDA_VERSION}"
+MORE_INFO+="└─ CUDA\t\t\t\t${CUDA_VERSION}"
 MORE_INFO+="</tool>"
 
-# Panel Print
+# Output panel
 echo -e "${INFO}"
-# Tooltip Print
+
+# Output hover menu
 echo -e "${MORE_INFO}"

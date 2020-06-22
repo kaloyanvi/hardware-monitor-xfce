@@ -29,5 +29,6 @@ MORE_INFO+="</tool>"
 
 # Output panel
 echo -e "${INFO}"
+
 # Output hover menu
 echo -e "${MORE_INFO}"
