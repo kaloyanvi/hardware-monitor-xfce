@@ -2,7 +2,7 @@
 
 _"Plugins" to monitor the hardware in your system._ Credits to `xfce4-genmon-scripts`, I decided to make these plugins after_
 
-![widget_toolbar.png](readme_previews/widgets_toolbar.png?raw=true "Title")
+![widget_toolbar.png](readme_previews/widgets_panel.png?raw=true "Title")
 
 There are 4 widgets in total and each has a panel that appears after hovering.:
 
@@ -40,4 +40,4 @@ Check `lm-sensors` and see how your components are labeled, it is possible that 
 Lastly, as long as you have `nvidia-smi` the GPU tracker should work properly without the need for any adjustments.
 
 
-_**I decided to make these plugins after getting inspired by seeing that repository `xfce4-genmon-scripts`.**_
+_**I decided to make the "plugins" after getting inspired by seeing this repository `xfce4-genmon-scripts`.**_
