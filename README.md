@@ -4,7 +4,7 @@ _"Plugins" to monitor the hardware in your system._ Credits to `xfce4-genmon-scr
 
 ![widget_toolbar.png](readme_previews/widgets_panel.png?raw=true "Title")
 
-There are 4 widgets in total and each has a panel that appears after hovering.:
+There are 4 widgets in total and each has a panel that appears after hovering:
 
 - CPU
 - GPU
