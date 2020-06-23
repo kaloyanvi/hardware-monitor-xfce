@@ -1,6 +1,6 @@
 ## Hardware Monitor - shell scripts - XFCE4
 
-_"Plugins" to monitor the hardware in your system._ Credits to `xfce4-genmon-scripts`, I decided to make these plugins after_
+_"Plugins" to monitor the hardware in your system._ 
 
 ![widget_toolbar.png](readme_previews/widgets_panel.png?raw=true "Title")
 
