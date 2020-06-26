@@ -31,7 +31,7 @@ _Panel view:_
 
 To get started you need the XFCE panel `xfce4-panel` and the Generic Monitor plugin `xfce4-genmon-plugin`. Additionally, you will need `lm-sensors` for the CPU temperature and the fans. To make use of the GPU monitor you need `nvidia-smi` which is installed with the CUDA driver for NVIDIA graphics card. Unfortunately, this script won't work on AMD GPUs, however by taking a look at how I have the NVIDIA tracker set up should be pretty easy to configure of AMD as well.
 
-To install, clone this repository `git clone https://github.com/kvidelov/hardware-monitor-kv.git`. Next, for each plugin you want to use, you need to copy the absolute path of that shell script (`hardware-monitor-kv\widgets\`) and add to a horizontal Generic Monitor `bash /absolute/path/to/widget.sh`. Then you can adjust font size, font and the period of how often you want the widget to get refreshed, personally I use 1-2 seconds for all widgets with Waree Bold 10.
+To install, clone this repository `git clone https://github.com/kvidelov/hardware-monitor-xfce.git`. Next, for each plugin you want to use, you need to copy the absolute path of that shell script (`hardware-monitor-kv\widgets\`) and add to a horizontal Generic Monitor `bash /absolute/path/to/widget.sh`. Then you can adjust font size, font and the period of how often you want the widget to get refreshed, personally I use 1-2 seconds for all widgets with Waree Bold 10.
 
 #### 3. Adjustments
 
