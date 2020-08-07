@@ -9,7 +9,9 @@ readonly ICON="${DIR}/icons/fan.png"
 # RPM values
 readonly CPU_COOLER="$(sensors | grep -A 0 fan2 | cut -c24-32)"
 readonly CASE_FAN1="$(sensors | grep -A 0 fan3 | cut -c24-32)"
-readonly CASE_FAN2="$(sensors | grep -A 0 fan5 | cut -c24-32)"
+readonly CASE_FAN2="$(sensors | grep -A 0 fan4 | cut -c24-32)"
+readonly CASE_FAN3="$(sensors | grep -A 0 fan5 | cut -c24-32)"
+readonly CASE_FAN4="$(sensors | grep -A 0 fan6 | cut -c24-32)"
 
 # Panel
 if [[ $(file -b "${ICON}") =~ PNG|SVG ]]; then
@@ -24,7 +26,9 @@ MORE_INFO="<tool>"
 MORE_INFO+="┌ Fans\n"
 MORE_INFO+="├─ CPU Cooler\t\t${CPU_COOLER}\n"
 MORE_INFO+="├─ Case Fan 1\t\t${CASE_FAN1}\n"
-MORE_INFO+="└─ Case Fan 2\t\t${CASE_FAN2}\n"
+MORE_INFO+="├─ Case Fan 2\t\t${CASE_FAN2}\n"
+MORE_INFO+="├─ Case Fan 3\t\t${CASE_FAN3}\n"
+MORE_INFO+="└─ Case Fan 4\t\t${CASE_FAN4}\n"
 MORE_INFO+="</tool>"
 
 # Output panel
