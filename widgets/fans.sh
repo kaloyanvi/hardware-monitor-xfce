@@ -23,8 +23,8 @@ INFO+="</txt>"
 
 # Tooltip
 MORE_INFO="<tool>"
-MORE_INFO+="┌ Fans\n"
-MORE_INFO+="├─ CPU Cooler\t\t${CPU_COOLER}\n"
+MORE_INFO+="\t\t\t Fans\n\n"
+MORE_INFO+="┌─ CPU Cooler\t\t${CPU_COOLER}\n"
 MORE_INFO+="├─ Case Fan 1\t\t${CASE_FAN1}\n"
 MORE_INFO+="├─ Case Fan 2\t\t${CASE_FAN2}\n"
 MORE_INFO+="├─ Case Fan 3\t\t${CASE_FAN3}\n"

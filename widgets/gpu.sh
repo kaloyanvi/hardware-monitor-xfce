@@ -29,7 +29,7 @@ INFO+="</txt>"
 
 # Tooltip
 MORE_INFO="<tool>"
-MORE_INFO+="${GPU_NAME}\n"
+MORE_INFO+="\t${GPU_NAME}\n"
 MORE_INFO+="\n"
 MORE_INFO+="\t\t\tLive Data\n"
 MORE_INFO+="┌─ GPU Load\t\t\t${GPU_UTIL}%\n"
@@ -39,7 +39,7 @@ MORE_INFO+="├─ Power Draw\t\t${GPU_POWER}W\n"
 MORE_INFO+="└─ Fan Speed\t\t\t${GPU_FAN_SPEED}%\n\n"
 
 MORE_INFO+="\t\t\tDrivers\n"
-MORE_INFO+="┌─ NVIDIA\t\t\t${DRIVER_VERSION}\n"
+MORE_INFO+="┌─ NVIDIA\t\t\t\t${DRIVER_VERSION}\n"
 MORE_INFO+="└─ CUDA\t\t\t\t${CUDA_VERSION}"
 MORE_INFO+="</tool>"
 
