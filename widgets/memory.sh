@@ -21,7 +21,7 @@ readonly SWP_USED=$(free -b | awk '/^[Ss]wap/{$3 = $3 / 1073741824; printf "%.2f
 readonly SWP_FREE=$(free -b | awk '/^[Ss]wap/{$4 = $4 / 1073741824; printf "%.2f", $4}')
 
 # RAM value in percentage
-readonly USED_PERCENT=$(free | grep Mem | awk '{ printf("%.1f %\n", $3/$2 * 100.0) }')
+readonly USED_PERCENT=$(free | grep Mem | awk '{ printf("%.1f%\n", $3/$2 * 100.0) }')
 
 # Panel
 if [[ $(file -b "${ICON}") =~ PNG|SVG ]]; then
