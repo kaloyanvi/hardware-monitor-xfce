@@ -13,19 +13,17 @@ There are 4 widgets in total and each has a panel that appears after hovering:
 
 #### 1. Widgets
 
+
+_Panel view:_
+
+ &nbsp;![widget_toolbar.png](readme_previews/panel_view.png?raw=true "Title")
+
 _On hover:_
 
 ![widget_toolbar.png](readme_previews/cpu_hover.png?raw=true "Title")
 ![widget_toolbar.png](readme_previews/gpu_hover.png?raw=true "Title")
 ![widget_toolbar.png](readme_previews/ram_hover.png?raw=true "Title")
 ![widget_toolbar.png](readme_previews/fans_hover.png?raw=true "Title")
-
-_Panel view:_
-
- &nbsp;&nbsp;&nbsp;&nbsp; ![widget_toolbar.png](readme_previews/cpu_panel.png?raw=true "Title")
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![widget_toolbar.png](readme_previews/gpu_panel.png?raw=true "Title")
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![widget_toolbar.png](readme_previews/ram_panel.png?raw=true "Title")
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![widget_toolbar.png](readme_previews/fans_panel.png?raw=true "Title")
 
 #### 2. How to use
 
