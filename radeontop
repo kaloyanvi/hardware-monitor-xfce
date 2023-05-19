@@ -1,0 +1,4 @@
+#!/bin/bash
+
+gpu=$(radeontop -d - -l 1 | grep gpu | cut -c 32-35)
+echo ${gpu%\.*}%
