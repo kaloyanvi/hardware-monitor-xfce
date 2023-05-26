@@ -1,4 +1,67 @@
 #!/bin/bash
 
-gpu=$(radeontop -d - -l 1 | grep gpu | cut -c 32-35)
-echo ${gpu%\.*}%
+readonly RADEONTOP=$(radeontop -d - -l 1 > /tmp/radeontop)
+readonly LMSENSORS=$(sensors > /tmp/sensors)
+readonly GPU=$(cat /tmp/radeontop | grep gpu | awk '{print $5}')
+readonly VRAM=$(cat /tmp/radeontop | grep gpu | awk {'print $27"     ─    "$28'})
+readonly SCLK=$(cat /tmp/radeontop | grep sclk | awk {'print $36"     ─    "$37'})
+readonly MCLK=$(cat /tmp/radeontop | grep mclk | awk {'print $33"   ─    "$34'})
+readonly GTT=$(cat /tmp/radeontop | grep gtt | awk {'print $30"       ─    "$31'})
+readonly EE=$(cat /tmp/radeontop | grep ee | awk {'print $7}')
+readonly VGT=$(cat /tmp/radeontop | grep vgt | awk '{print $9}')
+readonly TA=$(cat /tmp/radeontop | grep ta | awk '{print $11}')
+readonly SX=$(cat /tmp/radeontop | grep sx | awk '{print $13}')
+readonly SH=$(cat /tmp/radeontop | grep sh | awk '{print $15}')
+readonly SPI=$(cat /tmp/radeontop | grep spi | awk '{print $17}')
+readonly SC=$(cat /tmp/radeontop | grep sc | awk '{print $19}')
+readonly PA=$(cat /tmp/radeontop | grep pa | awk '{print $21}')
+readonly DB=$(cat /tmp/radeontop | grep db | awk '{print $23}')
+readonly CB=$(cat /tmp/radeontop | grep cb | awk '{print $25}')
+readonly TEMP=$(cat /tmp/sensors | grep edge | cut -c 16-17)
+readonly VDDGFX=$(cat /tmp/sensors | grep vddgfx | awk '{print $2""$3}')
+readonly VDDNB=$(cat /tmp/sensors | grep vddnb | awk '{print $2""$3}')
+readonly PPT=$(cat /tmp/sensors | grep PPT | awk '{print $2""$3}')
+
+# Panel
+if [[ $(file -b "${ICON}") =~ PNG|SVG ]]; then
+  INFO="<img>${ICON}</img>"
+  if hash xfce4-taskmanager &> /dev/null; then
+    INFO+="<click>xfce4-taskmanager</click>"
+  fi
+  INFO+="<txt>"
+else
+  INFO="<txt>"
+fi
+INFO+="${GPU%\.*}"%""
+INFO+="</txt>"
+
+# Tooltip
+MORE_INFO="<tool>"
+MORE_INFO+="\t\t        GPU Usage\n"
+MORE_INFO+="┌─GPU\t\t  "${GPU%\.*}"%""\n"
+MORE_INFO+="├─TEMP\t\t  ${TEMP}°C\n"
+MORE_INFO+="├─VDDGFX\t  ${VDDGFX}\n"
+MORE_INFO+="├─VDDNB\t  ${VDDNB}\n"
+MORE_INFO+="├─PPT\t\t  ${PPT}\n"
+MORE_INFO+="├─VRAM\t\t  ${VRAM%\,*}\n"
+MORE_INFO+="├─SCLK\t\t  ${SCLK}\n"
+MORE_INFO+="├─MCLK\t\t  ${MCLK%\,*}\n"
+MORE_INFO+="├─GTT\t\t  ${GTT%\,*}\n"
+MORE_INFO+="├─VGT\t\t  ${VGT%\,*}\n"
+MORE_INFO+="├─SPI\t\t  ${SPI%\,*}\n"
+MORE_INFO+="├─EE\t\t  ${EE%\,*}\n"
+MORE_INFO+="├─TA\t\t  ${TA%\,*}\n"
+MORE_INFO+="├─SX\t\t  ${SX%\,*}\n"
+MORE_INFO+="├─SH\t\t  ${SH%\,*}\n"
+MORE_INFO+="├─SC\t\t  ${SC%\,*}\n"
+MORE_INFO+="├─PA\t\t  ${PA%\,*}\n"
+MORE_INFO+="├─DB\t\t  ${DB%\,*}\n"
+MORE_INFO+="└─CB\t\t  ${CB%\,*}\n"
+MORE_INFO+="</tool>"
+
+# Output panel
+echo -e "${INFO}"
+
+# Output hover menu
+echo -e "${MORE_INFO}"
+
